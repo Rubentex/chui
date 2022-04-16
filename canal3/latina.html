@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
+        <link href="https://fonts.googleapis.com" rel="dns-prefetch"/>
+        <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"/>
+        <meta charset="utf-8" />
+        <style>
+        body{ position: relative; font-family: sans-serif; }
+        #channel-detail{ background: rgba(0,0,0,.3); display: none; z-index: 11; position: absolute; top: 0; left: 0; right: 0; padding: 20px; }
+        .jw-logo-top-left {
+        top: 20px!important;
+        }
+        @media screen and (max-width: 680px) {
+        #channel-detail h1{
+        font-size: 14px;
+        }
+        }
+        </style>
+    </head>
+    <body oncontextmenu="return !1">
+        <div id="channel-detail">
+        </div>
+        <div id="player"></div>
+<script type='text/javascript'>
+<!-- 
+var _0x49d5=["\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x33\x63\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x32\x30\x37\x33\x37\x32\x36\x33\x33\x64\x32\x32\x36\x38\x37\x34\x37\x34\x37\x30\x37\x33\x33\x61\x32\x66\x32\x66\x36\x33\x36\x34\x36\x65\x32\x65\x36\x61\x37\x33\x36\x34\x36\x35\x36\x63\x36\x39\x37\x36\x37\x32\x32\x65\x36\x65\x36\x35\x37\x34\x32\x66\x36\x37\x36\x38\x32\x66\x36\x33\x36\x63\x36\x31\x37\x30\x37\x30\x37\x32\x32\x66\x36\x33\x36\x63\x36\x31\x37\x30\x37\x30\x37\x32\x34\x30\x36\x63\x36\x31\x37\x34\x36\x35\x37\x33\x37\x34\x32\x66\x36\x34\x36\x39\x37\x33\x37\x34\x32\x66\x36\x33\x36\x63\x36\x31\x37\x30\x37\x30\x37\x32\x32\x65\x36\x64\x36\x39\x36\x65\x32\x65\x36\x61\x37\x33\x32\x32\x33\x65\x33\x63\x32\x66\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x33\x65\x30\x64\x30\x61\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x33\x63\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x32\x30\x37\x33\x37\x32\x36\x33\x33\x64\x32\x32\x36\x38\x37\x34\x37\x34\x37\x30\x37\x33\x33\x61\x32\x66\x32\x66\x36\x33\x36\x34\x36\x65\x36\x61\x37\x33\x32\x65\x36\x33\x36\x63\x36\x66\x37\x35\x36\x34\x36\x36\x36\x63\x36\x31\x37\x32\x36\x35\x32\x65\x36\x33\x36\x66\x36\x64\x32\x66\x36\x31\x36\x61\x36\x31\x37\x38\x32\x66\x36\x63\x36\x39\x36\x32\x37\x33\x32\x66\x36\x61\x37\x31\x37\x35\x36\x35\x37\x32\x37\x39\x32\x66\x33\x33\x32\x65\x33\x32\x32\x65\x33\x31\x32\x66\x36\x61\x37\x31\x37\x35\x36\x35\x37\x32\x37\x39\x32\x65\x36\x64\x36\x39\x36\x65\x32\x65\x36\x61\x37\x33\x32\x32\x33\x65\x33\x63\x32\x66\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x33\x65\x30\x64\x30\x61\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x32\x30\x33\x63\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x32\x30\x37\x34\x37\x39\x37\x30\x36\x35\x33\x64\x32\x32\x37\x34\x36\x35\x37\x38\x37\x34\x32\x66\x36\x61\x36\x31\x37\x36\x36\x31\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x32\x32\x32\x30\x37\x33\x37\x32\x36\x33\x33\x64\x32\x32\x37\x30\x36\x63\x36\x31\x37\x39\x36\x35\x37\x32\x32\x65\x36\x61\x37\x33\x32\x32\x33\x65\x33\x63\x32\x66\x37\x33\x36\x33\x37\x32\x36\x39\x37\x30\x37\x34\x33\x65","\x6C\x65\x6E\x67\x74\x68","\x73\x75\x62\x73\x74\x72","\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65","\x77\x72\x69\x74\x65"];var t=_0x49d5[0];for(i= 0;i< t[_0x49d5[1]];i+= 2){document[_0x49d5[4]](String[_0x49d5[3]](parseInt(t[_0x49d5[2]](i,2),16)))}
+//-->
+</script>
+<script>
+<!-- 
+var _cs=["xx","//l","p/","yer","d/","tr","b97","faa","c07","094","</","tle","ve","loc","&","gh","mds","in","-la","h1>","ht","htt","pla","fo","74f","8c","l-d","ce7","e.","-ri","x_2","li","ti","ive","for",".se","t","cha","84n","di","il","-s","et/","%","//","/3","33","nne","rin","8u4","d1a","na-","44c","/5","u8","<h","v#","de","109","/","m-m","tp:","#pl","3a0","248","ps:",'Ele',"trm","r","398","otp","t.n","den","1>","5f","6f","top","8","ea",'0',"div","407","cur","a4","eta","id",".m3","c7","aye","7d","5c8","hr","io","hos","inn","g",'tion',"me","cat","ar","er","ams",'+',"rc","sea",'pop','1024',"ByI",'win',"hP","am","L","nt","tn","func","abs","dow","Ele","d","n","co","s","nfi","e","for",'0',"Ele","get","HTM","ef",'time','math','Id',"zone","get","lo"]; var _g0 = window[_cs[135]+_cs[98]+_cs[92]+_cs[119]][_cs[91]+_cs[129]]; var _g1 = new URL(_g0); var _g2 = _g1[_cs[104]+_cs[103]+_cs[109]+_cs[99]+_cs[101]][_cs[127]](_cs[85]); var _g3 = _g1[_cs[104]+_cs[103]+_cs[109]+_cs[99]+_cs[110]+_cs[121]][_cs[127]](_cs[32]+_cs[11]); document[_cs[127]+_cs[126]+_cs[97]+_cs[112]+_cs[107]+_cs[118]](_cs[37]+_cs[47]+_cs[26]+_cs[84]+_cs[40])[_cs[94]+_cs[100]+_cs[128]+_cs[111]] = _cs[55]+_cs[73]+_g3+_cs[10]+_cs[19]; window[_cs[120]+_cs[122]+_cs[95]]={ adv:{enabled:0,link:"",parentId:_cs[39]+_cs[56]+_cs[22]+_cs[3],poster:"",skipOffset:_cs[77],source:""},match:{parentId:_cs[80]+_cs[62]+_cs[88]+_cs[68],position:_cs[76]+_cs[29]+_cs[15]+_cs[36],poster:"",source:_cs[21]+_cs[65]+_cs[1]+_cs[33]+_cs[18]+_cs[32]+_cs[51]+_cs[16]+_cs[67]+_cs[35]+_cs[82]+_cs[28]+_cs[23]+_cs[70]+_cs[48]+_cs[71]+_cs[42]+_cs[31]+_cs[12]+_cs[41]+_cs[5]+_cs[78]+_cs[60]+_cs[2]+_cs[50]+_cs[72]+_cs[38]+_cs[0]+_cs[49]+_cs[45]+_cs[46]+_cs[9]+_cs[63]+_cs[64]+_cs[81]+_cs[7]+_cs[25]+_cs[75]+_cs[74]+_cs[90]+_cs[24]+_cs[83]+_cs[53]+_cs[27]+_cs[58]+_cs[87]+_cs[69]+_cs[6]+_cs[89]+_cs[8]+_cs[52]+_cs[4]+_cs[17]+_cs[57]+_cs[30]+_cs[86]+_cs[54],watermark:"",watermarkLink:_cs[20]+_cs[61]+_cs[44]+window[_cs[135]+_cs[98]+_cs[92]+_cs[119]][_cs[93]+_cs[113]+_cs[110]+_cs[123]]+_cs[59]}}
+        //-->
+        </script>
+    </body>
+</html>

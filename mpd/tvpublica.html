@@ -1,0 +1,35 @@
+<script src="https://cdn.statically.io/gh/clappr/clappr/dev/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js"></script>
+<script src="https://cdn.statically.io/gh/andrefilimono/clappr-flvjs-playback/377bd2be/dist/clappr-flvjs-playback.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.js"></script>
+<div style="clear:both;"></div>
+<style> 
+
+.player-poster[data-poster] {
+  background-size: cover;
+}
+body{
+  margin:0;
+  padding:0;
+}
+</style>
+<div id="player"></div>
+<script>
+      var player = new Clappr.Player(
+        {
+          source: 'https://stream2-cdn.vaughnsoft.net/play/live_el_monumental.flv',
+          mimeType: 'video/flv',
+          plugins: [FLVJSPlayback, DashShakaPlayback, LevelSelector,],
+          poster: '',
+          preload: 'true',
+          autoPlay: true,
+          height: '100%',
+          width: '100%',
+          shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+          },
+          parentId: '#player'
+        });
+    </script>

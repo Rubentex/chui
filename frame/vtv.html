@@ -1,0 +1,51 @@
+<head>  
+<meta name='theme-color' content='black'>
+      <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+      <meta name='referrer' content='no-referrer'>
+      <meta content='width=device-width, initial-scale=1' name='viewport'>
+      <title>HD</title>
+      <link href='favicon2.ico' rel='shortcut icon' type='image/x-icon'>
+      <script src='//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js'></script>
+      <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+      <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+      <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+      <script src='//cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js'></script>
+      <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+      <script src='https://revoluci0nrus4l3n4n.cc/js/keys.js'></script>
+   </head>
+   <body bgcolor='black' style='margin:0'>
+      <div id='player'></div>
+      <script>
+         var str = window.atob('aHR0cHM6Ly9lZGdlLWxpdmUxMS1oci5jdmF0dHYuY29tLmFyL2xpdmUvYzNlZHMvVlRWX0hEL1NBX0xpdmVfZGFzaF9lbmMvVlRWX0hELm1wZA==');
+         window.onload = function() {
+             var player = new Clappr.Player({
+                 source: str,
+                 parentId: '#player',
+                 mimeType: 'application/x-mpegURL',
+                 plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, Clappr.MediaControl],
+                 events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
+                 height: '100%',
+                 width: '100%',
+                 autoPlay: true,                 crossOrigin: 'anonymous',
+                 shakaConfiguration: {
+                 manifest: {retryParameters: {maxAttempts: Infinity}},
+                 streaming: {retryParameters: {maxAttempts: Infinity}},
+                 drm: {retryParameters: {maxAttempts: Infinity}},
+                 },
+                 playbackRateConfig: {
+                 defaultValue: '1.00x',
+                 options: [
+                 {value: '0.10', label: '0.10x'},
+                 {value: '0.25', label: '0.25x'},
+                 {value: '0.50', label: '0.50x'},
+                 {value: '0.75', label: '0.75x'},
+                 {value: '1.00', label: '1.00x'},
+                 {value: '1.25', label: '1.25x'},
+                 {value: '1.50', label: '1.50x'},
+                 {value: '1.75', label: '1.75x'},
+                 {value: '2.00', label: '2.00x'},
+                 ]
+                 },
+             });
+         };
+      </script>

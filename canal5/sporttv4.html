@@ -1,0 +1,74 @@
+<head cfapps-selector="head">
+    <title>sporttv4</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favico.png">
+
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+
+    <script type="text/javascript"
+        src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+
+            $(document)[0].oncontextmenu = function () { return false; }
+
+            $(document).mousedown(function (e) {
+                if (e.button == 2) {
+                    alert('Sorry, this functionality is disabled!');
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        });
+    </script>
+    <style>
+        .player-poster[data-poster] {
+            background-size: cover;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<div id="player"></div>
+
+
+
+<script type="text/javascript">
+    var player = new Clappr.Player({
+        source: 'https://ashur.cdn.clw.nos.pt/nos_dash_cenc/rolling-buffer/media/EPGC247/EPGC247/transmux/Manifest.mpd?c=77.77.222.130&s=395b2130-5d4e-4445-a539-24bf83d940ef&u=59873a51cf027050ac5498a9',
+        height: '100%',
+        width: '100%',
+        poster: 'https://cdn6.aptoide.com/imgs/7/4/7/74714d53923dbb9d874a647cacb67985_fgraphic.png',
+        watermark: '/logo.png',
+        position: 'bottom-right',
+        plugins: [DashShakaPlayback, LevelSelector],
+        shakaConfiguration: {
+            drm: {
+                clearKeys: {
+                    '786c7c30737f49968796e261f9ed6959': '79171aad54eb36d2300ec41a829640c0'
+                }
+            },
+            preferredAudioLanguage: 'pt-BR',
+        },
+        shakaOnBeforeLoad: function (shaka_player) {},
+        parentId: '#player'
+    });
+
+    var meta = document.createElement('meta');
+    meta.name = "referrer";
+    meta.content = "no-referrer";
+    document.getElementsByTagName('head')[0].appendChild(meta);
+
+</script>

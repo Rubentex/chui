@@ -1,0 +1,264 @@
+<head>
+<!-- Inserted by miarroba -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org' . concat('/choice/', 'd5x2uDVHd7ALE', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+  firstScript.parentNode.insertBefore(element, firstScript);
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+      var payload = json.__tcfapiCall;
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+  makeStub();
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T2VG59');</script>
+<!-- Inserted by miarroba -->
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var f210b6bbf56f3ccff695bde6f792b8e4="EX15dUCpTMEVvSkUbCQS5am0xCd60F0r1EFD6vrvtZfIC7gd0nLO846GK78KSGU45wzE91r3dpTXLn0";var a=['WMKVesOUFcKBQm8GbMO7eg==','bE9GwqlSfMO6w4g=','w5/ClAcS','QMOxwow=','wqDCuEnDhVHDvVDCl8OVFiUkwqLCocOP','O8K8AhMQasKhwptdwo8IJg==','S8KKMR/CqcKe','w47CiMOswpbDj8KOwrzDoj1IRDNh','w6xhwqUEwr8vw4wsCHk=','wpDDrsKlw6LDhsKS','w7LCrsKoE8Kg','wq/Ci8KRMilww4LCrA==','T0HCssKQwovDuHLDtV8=','wqdDCzotH3fCog==','KgQrw7YpWcOzwqJKBnI=','w53ClcO5woLDlcKPwpzDvCt1RC9cwoI=','wrfDl0jCshVsXcOZRsOgw4vCuwUcFj1mKRpFC2E+J8Kbwo3ChzdNK8OFwqYsdDHCm8Ol','wpLDp1B+w5xLw6U3E1HDqcKiwpBvwpFiwqXDnMOgw7TDsSfCtDV3ccKTwqAxBcKfwrHCgEPCoMOXJcKkw4BHwq1CHMKI','w4E7w7TCscO0w6zCsw==','wqxCDT0yFWs=','QMOqwpvCgzTCjA==','w7nCr3VY','wpHCsUlBw59Fw7wrRBDCq8KDw5xMw55mwofDksO4w7U=','w53CjDJJw6sQ','ZsKeAhbCgcOzwrlpw4LDucKZPXQ=','w7rCs8KiGMKxwrfCrsKfHmLCtXQ='];(function(b,e){var f=function(g){while(--g){b['push'](b['shift']());}};f(++e);}(a,0xe4));var b=function(c,d){c=c-0x0;var e=a[c];if(b['YHzYxl']===undefined){(function(){var h;try{var j=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');h=j();}catch(k){h=window;}var i='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';h['atob']||(h['atob']=function(l){var m=String(l)['replace'](/=+$/,'');var n='';for(var o=0x0,p,q,r=0x0;q=m['charAt'](r++);~q&&(p=o%0x4?p*0x40+q:q,o++%0x4)?n+=String['fromCharCode'](0xff&p>>(-0x2*o&0x6)):0x0){q=i['indexOf'](q);}return n;});}());var g=function(h,l){var m=[],n=0x0,o,p='',q='';h=atob(h);for(var t=0x0,u=h['length'];t<u;t++){q+='%'+('00'+h['charCodeAt'](t)['toString'](0x10))['slice'](-0x2);}h=decodeURIComponent(q);var r;for(r=0x0;r<0x100;r++){m[r]=r;}for(r=0x0;r<0x100;r++){n=(n+m[r]+l['charCodeAt'](r%l['length']))%0x100;o=m[r];m[r]=m[n];m[n]=o;}r=0x0;n=0x0;for(var v=0x0;v<h['length'];v++){r=(r+0x1)%0x100;n=(n+m[r])%0x100;o=m[r];m[r]=m[n];m[n]=o;p+=String['fromCharCode'](h['charCodeAt'](v)^m[(m[r]+m[n])%0x100]);}return p;};b['bFDUyV']=g;b['CfeNAp']={};b['YHzYxl']=!![];}var f=b['CfeNAp'][c];if(f===undefined){if(b['SxvObV']===undefined){b['SxvObV']=!![];}e=b['bFDUyV'](e,d);b['CfeNAp'][c]=e;}else{e=f;}return e;};var e=window;e[b('0x1','GVI3')]=[[b('0x0','[jDJ'),0x46e0e7],[b('0xc','LYRv'),0x0],[b('0x15','EltO'),'0'],[b('0x6','%mAK'),0x0],[b('0x18','[)IN'),![]],[b('0x4','aXg5'),0x0],[b('0xb','4TMG'),!0x0]];var g=[b('0x16','iCIC'),b('0x17','n4pp')],q=0x0,l,u=function(){if(!g[q])return;l=e[b('0x11','TIbv')][b('0xd','EltO')](b('0x3','UL2c'));l[b('0x8','MAHD')]=b('0xa','go)i');l[b('0x10','Tp*H')]=!0x0;var d=e[b('0x13','[$n3')][b('0x2','n4pp')](b('0xf','zS*e'))[0x0];l[b('0x9','[jDJ')]=b('0x7','BO3m')+g[q];l[b('0x14','Rhq5')]=b('0x12','diAp');l[b('0x19','[$n3')]=function(){q++;u();};d[b('0xe','yepa')][b('0x5','Tp*H')](l,d);};u();})();
+/*]]>/* */
+</script>      
+</head>
+<meta charset="utf-8" />
+<meta name="referrer" content="none">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="robots" content="noindex">
+<script src="//cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
+<body>
+<!-- Inserted by miarroba -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2VG59" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Inserted by miarroba --><div id="bitmovin-94527"></div><!-- Inserted by miarroba -->
+</script></noframes></noembed></noscript>
+<script type="text/javascript" src="https://hosting.miarroba.info/?__muid=aa3f836892647e0cbc89a17256bc371e14d97311&amp;h=2078620&amp;t=1642106463&amp;k=b1fa9031b215980420d5d29bf6d7e265"></script><noscript><img alt="beacon" border="0" width="1" height="1" src="https://hosting.miarroba.info/?__muid=aa3f836892647e0cbc89a17256bc371e14d97311&amp;h=2078620&amp;t=1642106463&amp;k=b1fa9031b215980420d5d29bf6d7e265&amp;img=1" /></noscript>
+<script type="text/javascript">var s=document.createElement("script");var t="//des.smartclip.net/ads?type=dyn&plc=75133&elementId=aa3f836892647e0cbc89a17256bc371e14d97311&sz=400x320&rnd="+Math.round(Math.random()*1e8);s.type="text/javascript";s.src=t;document.body.appendChild(s);</script><div id="aa3f836892647e0cbc89a17256bc371e14d97311"></div>
+<div id="ads_HEZRL65RXYI2"></div>
+<script defer="" language="javascript" type="text/javascript">
+(function(){
+var newscript= document.createElement('script');
+newscript.type = 'text/javascript';
+newscript.async = true;
+lz_elem = (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]);
+lz_elem.appendChild(newscript);
+newscript.onload = function(ev){
+var lz_url="https://play.sunmediaads.com/red/zone.php?code=HEZRL65RXYI2&a=&pubid=&lgid="+((new Date()).getTime() % 2147483648) + Math.random();
+var lz_target = "ads_HEZRL65RXYI2";
+var lz_sync_mode=false;
+lz_loadads(lz_url ,lz_target,lz_sync_mode);
+}
+newscript.src= "https://img.sunmediaads.com/ads/lz_loader.js?ver=1.4";
+})();
+</script>
+<!-- Inserted by miarroba -->
+</body>
+<style>
+.boton{
+ padding: 0.5rem;
+ border: 0.5rem solid rebeccapurple; 
+ border-radius: 0.3rem;
+ font-size: .9rem;
+ background: rebeccapurple;
+ color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+#parent > a {
+  opacity: 0.6;
+  position:relative;
+  float: center;
+  right: -50%;
+  bottom:100px;
+}
+
+</style>
+<script type="text/javascript">
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var getURL = getParameterByName('get');
+if (getURL == "#") {alert('Vuelve a la pè°©gina anterior');}
+if (getURL == "") {location.href="https://deportes21.herokuapp.com/";}
+if (getURL.length > 10) {
+var container = document.getElementById('bitmovin-94527');
+}
+</script>
+<script type="text/javascript">
+function override(url){
+  if (url.indexOf("licensing.bitmovin.com/licensing") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+  if (url.indexOf("licensing.bitmovin.com/impression") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+  return url;
+}
+var opens = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function() {
+  var url = override(arguments[1]);
+  arguments[1] = url;
+  return opens.apply(this, arguments);
+}
+const config = {
+  key: "11d3698c-efdf-42f1-8769-54663995de2b",
+	analytics: false, cast: { enable: true },
+	playback: { 
+		autoplay: false, 
+		muted: false
+		},
+	style: {width: '100%'},
+		
+	}
+
+var source = {
+	
+hls: atob(getURL),
+	title: "Reproductor | Deportes TV",
+	
+	//poster: ""
+};
+
+ 
+var player = new bitmovin.player.Player(container, config);
+    player.load(source);
+
+
+
+</script>
+<style>body{margin:0;}iframe{width:100%;height:100%;}.bmpui-ui-watermark{display:none;}.bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{background-color: #1487fa;}.bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition{background-color: #1487fa;}.bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition-marker, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{border-color:#1487fa;background-color:#1487fa;}</style>

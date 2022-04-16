@@ -1,0 +1,48 @@
+<meta name="robots" content="noindex" />
+<meta name="referrer" content="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/cdn-cgi/apps/head/OzejBFsVDdjZxbJob9BmlvOvsZk.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.5.1/shaka-player.compiled.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-shaka@latest/build/p2p-media-loader-shaka.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<style>
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; background-color: #000;
+    margin: 0;
+}
+#player {
+    width: 100vw;
+    height: 100%;
+    //max-height: 100vh;
+    //max-width: 177.78vh;
+    //margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; background-color: #000;
+    right: 0;
+}
+</style>
+<div id="player"></div>
+<script type="text/javascript">
+var src = "cd2db29ffcbbf247471454ed44573dffee012ddaa202ee1019836eab7df64f8clryrdogNX8tY4ayoIy38YN3TJsIVgHgNjHplJLl3remUHIz7Mf/mKnpojZ1bzR4iLMxL1o8Dj2pu8NhN8FaUbBNJmvgowriyKdauXOYMeVfzZhPBSrt4H+h/gfsAgJkWtUNmW2xl3kQ1NOv7nCqPSA==";
+var cv = "040a01352b1834cd3acc062ba0e40362b6d78859cf218bb2fa268d073dd776114xqz1etWdG/4Lc7f1NkkzWf1d8fE5nAU7J3dWRnVIGBUj3HwD0G+pbY3buvGEPpQ3bRBkNRBAi4J+1EtvfR1mcdeLnK3qWutaFM7HRVwUt82CV6h4TO9z/O70PDYQ23KndnueqgbFjv2Mn0ld7X4daLGsfl8EZ7bxMmhwXBxEwoOtwfevozRZQpJwfDXhXGojPRM0/MSd6RnLRzMOqTqCw==";
+var title = "Reproductor beIN Sports 4 FR";
+</script>
+<script type='text/javascript'>
+<!--
+var _0x6fba=["\x33\x37","\x66\x37","\x63\x36\x31","\x34\x32\x30","\x37\x33\x37","\x39\x37","\x33\x33\x64","\x32\x65\x36","\x32\x32","\x30\x37","\x33\x36\x33","\x7A\x6F\x6E\x65","\x33\x65","\x37\x32","\x36\x33\x36","\x37\x30\x37","\x36\x39","\x77\x69\x6E","\x32\x36","\x34\x33\x65","\x32\x32\x36","\x37\x30","\x32\x66","\x33\x63\x32","\x61\x37\x33","\x33\x36","\x33\x63\x37","\x73\x75","\x43\x6F\x64","\x6F\x6D\x43","\x72","\x69\x74\x65","\x67\x74\x68","\x6C\x65\x6E","\x65","\x77\x72","\x66\x72","\x68\x61\x72","\x62\x73\x74"];var _cs=[_0x6fba[0],_0x6fba[1],_0x6fba[2],_0x6fba[3],_0x6fba[4],_0x6fba[5],_0x6fba[6],_0x6fba[7],_0x6fba[8],_0x6fba[9],_0x6fba[10],_0x6fba[11],_0x6fba[12],_0x6fba[13],_0x6fba[14],_0x6fba[15],_0x6fba[16],_0x6fba[17],_0x6fba[18],_0x6fba[19],_0x6fba[20],_0x6fba[21],_0x6fba[22],_0x6fba[23],_0x6fba[24],_0x6fba[25],_0x6fba[26],_0x6fba[27],_0x6fba[28],_0x6fba[29],_0x6fba[30],_0x6fba[31],_0x6fba[32],_0x6fba[33],_0x6fba[34],_0x6fba[35],_0x6fba[36],_0x6fba[37],_0x6fba[38]];var _g0=_cs[26]+ _cs[25]+ _cs[0]+ _cs[18]+ _cs[5]+ _cs[9]+ _cs[3]+ _cs[4]+ _cs[18]+ _cs[6]+ _cs[20]+ _cs[24]+ _cs[22]+ _cs[14]+ _cs[2]+ _cs[21]+ _cs[7]+ _cs[24]+ _cs[8]+ _cs[12]+ _cs[23]+ _cs[1]+ _cs[10]+ _cs[13]+ _cs[16]+ _cs[15]+ _cs[19];for(_g1= 0;_g1< _g0[_cs[33]+ _cs[32]];_g1+= 2){document[_cs[35]+ _cs[31]](String[_cs[36]+ _cs[29]+ _cs[37]+ _cs[28]+ _cs[34]](parseInt(_g0[_cs[27]+ _cs[38]+ _cs[30]](_g1,2),16)))}
+//-->
+</script>

@@ -1,0 +1,62 @@
+<head>
+    <meta name='theme-color' content='black'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <meta name='referrer' content='no-referrer'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link href='favicon2.ico' rel='shortcut icon' type='image/x-icon'>
+
+    <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+</head>
+
+<body bgcolor='black' style='margin:0'>
+    <div id='video'></div>
+    <h3>p2p info:</h3>
+    <p id="peers"></p>
+    <p id="info">p2p ratio: 0% saved traffic: 0KB upload: 0KB</p>
+    <script>
+
+        var player = new Clappr.Player({
+            parentId: "#video",
+            source: "https://dtvott-abc.akamaized.net/dash_live_1058/manifest.mpd",
+            plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl, PlaybackRatePlugin],
+            events: { onReady: function () { var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable(); }, },
+            autoplay: false,
+            width: '100%',
+            height: '100%',
+            shakaConfiguration: {
+                drm: {
+                    clearKeys: {
+                        'wd_04MvSxZTL2D6bpt6-TQ': 'as_4AzD9XaaWHjPYTf9NAw',
+                    }
+                }
+            },
+            shakaOnBeforeLoad: function (shakaPlayerInstance) {
+                if (P2PEngineShaka.isSupported()) {
+                    var engine = new P2PEngineShaka(shakaPlayerInstance, {
+                        // logLevel: 'debug',
+                    });
+                    engine.on('stats', function (stats) {
+                        var total = stats.totalHTTPDownloaded + stats.totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(stats.totalP2PDownloaded / total * 100)}%   saved traffic: ${Math.round(stats.totalP2PDownloaded)}KB upload: ${Math.round(stats.totalP2PUploaded)}KB`;
+                    })
+                    engine.on('peers', function (peers) {
+                        document.querySelector('#peers').innerText = `peers: ${peers.length}`;
+                    })
+                }
+            }
+
+        });
+
+        player.play();
+
+    </script>

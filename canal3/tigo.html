@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch"/>
+        <link href="https://fonts.googleapis.com" rel="dns-prefetch"/>
+        <link href="https://fonts.gstatic.com" rel="dns-prefetch"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"/>
+        <meta charset="utf-8" />
+        <style>
+        body{ position: relative; font-family: sans-serif; }
+        #channel-detail{ background: rgba(0,0,0,.3); display: none; z-index: 11; position: absolute; top: 0; left: 0; right: 0; padding: 20px; }
+        .jw-logo-top-left {
+        top: 20px!important;
+        }
+        @media screen and (max-width: 680px) {
+        #channel-detail h1{
+        font-size: 14px;
+        }
+        }
+        </style>
+    </head>
+    <body oncontextmenu="return !1">
+        <div id="channel-detail">
+        </div>
+        <div id="player"></div>
+<script type='text/javascript'>
+<!-- 
+var t="20202020202020203c736372697074207372633d2268747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f636c617070722f636c61707072406c61746573742f646973742f636c617070722e6d696e2e6a73223e3c2f7363726970743e0d0a20202020202020203c736372697074207372633d2268747470733a2f2f63646e6a732e636c6f7564666c6172652e636f6d2f616a61782f6c6962732f6a71756572792f332e322e312f6a71756572792e6d696e2e6a73223e3c2f7363726970743e0d0a20202020202020203c73637269707420747970653d22746578742f6a61766173637269707422207372633d22706c617965722e6a73223e3c2f7363726970743e";for(i=0;i<t.length;i+=2){document.write(String.fromCharCode(parseInt(t.substr(i,2),16)));}
+//-->
+</script>
+        <script>
+        var url_string = window.location.href;
+var url = new URL(url_string);
+var cid = url.searchParams.get("id");
+var ctitle = url.searchParams.get("title");
+document.getElementById("channel-detail").innerHTML = "<h1>"+ctitle+"</h1>";
+        window.config={ adv:{enabled:0,link:"",parentId:"div#player",poster:"",skipOffset:"8",source:""},match:{parentId:"div#player",position:"top-right",poster:"",source:"https://pony.tube/static/streaming-playlists/hls/476d8820-1824-4ce0-aefa-ee18fdb58f87/master.m3u8",watermark:"",watermarkLink:"http://"+window.location.hostname+"/"}} 
+        </script>
+    </body>
+</html>
+
+

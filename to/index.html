@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal</title>
+	<link rel="stylesheet" href="css/shadowbox.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="js/shadowbox.js"></script>
+    <style type="text/css">
+
+div.vid iframe, div.vid object, div.vid embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+Shadowbox.init({ language: "es", players:  ['img', 'html', 'iframe', 'qt', 'wmp', 'swf', 'flv'] });
+ 
+setTimeout(function() {
+    Shadowbox.open({
+        content: '<div class="vid"><iframe width="100%" height="100%" src="https://agrarianbeepsensitivity.com/f3w2a0a6?key=a10e7b78fd4a69ab2e00557ccb3fcbb3" frameborder="0" allowfullscreen></iframe></div>',
+        player: "html",
+        title: "publicidad esperar unos segundos...",
+        width: 500,
+        height: 500,
+    });
+}, 200);
+</script>
+</body>
+</html>
+
+
+	
+
+

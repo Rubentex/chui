@@ -1,0 +1,34 @@
+<head cfapps-selector="head">
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<div id="player"></div>
+<script type="text/javascript">
+    var player = new Clappr.Player({
+        source: 'https://ashur.cdn.clw.nos.pt/nos_dash_cenc/rolling-buffer/media/EPGC180/EPGC180/transmux/Manifest.mpd?c=77.77.222.130&s=c83f78b2-96d1-4f93-b7cb-8570e4029184&u=59873a51cf027050ac5498a9',
+        height: '100%',
+        width: '100%',
+        poster: 'https://cdn6.aptoide.com/imgs/7/4/7/74714d53923dbb9d874a647cacb67985_fgraphic.png',
+        watermark: '/logo.png',
+        position: 'bottom-right',
+        plugins: [DashShakaPlayback, LevelSelector],
+        shakaConfiguration: {
+            drm: {
+                clearKeys: {
+                    '5d51f1b832f84a58823efc729737570a': 'd22038333e154a74c29fadb203962b68'
+                }
+            },
+            preferredAudioLanguage: 'pt-BR',
+        },
+        shakaOnBeforeLoad: function (shaka_player) { },
+        parentId: '#player'
+    });
+</script>

@@ -1,0 +1,27 @@
+        body {
+            margin: 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bmpui-ui-watermark {
+            display: none;
+        }
+
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker {
+            background-color: #f63906;
+        }
+
+        .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition,
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition {
+            background-color: #f63906;
+        }
+
+        .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition-marker,
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker {
+            border-color: #f63906;
+            background-color: #f63906;
+        }
